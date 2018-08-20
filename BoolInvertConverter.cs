@@ -1,0 +1,27 @@
+﻿// Copyright 2018 Dan Pike
+// Use of this source code is governed by a MIT license that can be
+// found in the LICENSE file.
+
+using System;
+using System.Windows.Data;
+
+namespace V8Builder
+{
+    public class BoolInvertConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
+        {
+            if (targetType != typeof(bool))
+                throw new InvalidOperationException("The target must be a boolean");
+
+            return !(bool)value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+}
