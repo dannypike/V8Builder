@@ -162,7 +162,7 @@ Below the ```Available Options``` list box, is another list box that shows all o
 
 To change the value of an option for the build, move it into the second list box ```Selected options```, then change the value in the text box that is below the ```BUILD V8``` button. You can move options between the two list boxes either by double-clicking them or by selecting them and clicking the ```>>``` or ```<<``` buttons, as appropriate.
 
-If you select an option by clicking on it and then find that you are unable to change the value (i.e. the text box appears to be in read-only mode), then make sure that the option you are trying to edit is displayed in the ```Selected options``` list box and that it is currently selected (highlighted) in that list box. You cannot edit the value of the values in the ```Available options``` list box.
+If you select an option by clicking on it and then find that you are unable to change its value (i.e. the text box appears to be in read-only mode), then make sure that the option you are trying to edit is displayed in the ```Selected options``` list box and that it is currently selected (highlighted) in that list box. You cannot edit the value of the options when they are listed in the ```Available options``` list box.
 
 As you change the value in the text box, notice that the configure command that is displayed in the bottom-right window updates automatically in real-time. If you don't see a command line and, instead, see a message like this:
 
@@ -173,7 +173,7 @@ Select a configuration from the list box on the left (click the UPDATE OPTIONS b
 then you need to choose a build configuration from the list-box to the left of this window. The configure command window should look something like this:
 
 ```
-C:\Users\Dan\AppData\Local\Gamaliel\V8Builder\depot_tools\win_tools-2_7_6_bin\python\bin\python.exe tools\dev\v8gen.py gen -b ia32.optdebug "ia32.optdebug" --no-goma -- is_clang=false
+C:\Users\Dan\AppData\Local\Gamaliel\V8Builder\depot_tools\win_tools-2_7_6_bin\python\bin\python.exe tools\dev\v8gen.py gen -b ia32.optdebug "ia32.optdebug" --no-goma -- is_clang=false treat_warnings_as_errors=false
 ```
 
 If you want to revert to using the default setting, move the option from the ```Selected option``` list-box back into the ```Available options``` list box. Notice how the option is removed from the configure command in the bottom-right.
