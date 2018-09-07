@@ -29,7 +29,7 @@
             <RowDefinition Height="30" />
             <RowDefinition Height="44" />
         </Grid.RowDefinitions>
-        <TabControl Grid.Row="0" x:Name="Tabs" SelectedIndex="{Binding CurrentTab}">
+        <TabControl Grid.Row="0" x:Name="Tabs" SelectedIndex="{Binding CurrentTab}" SelectionChanged="Tabs_SelectionChanged">
             <TabItem Header=" Setup ">
                 <Grid>
                     <Grid.RowDefinitions>

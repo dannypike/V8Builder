@@ -90,7 +90,7 @@ namespace V8Builder
             }
         }
 
-        private void AvailableOptions_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void AvailableOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ignoreSelectionChange_)
             {
@@ -109,7 +109,7 @@ namespace V8Builder
             }
         }
 
-        private void SelectedOptions_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void SelectedOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ignoreSelectionChange_)
             {
@@ -132,17 +132,17 @@ namespace V8Builder
             MoveSelected();
         }
 
-        private void DescribingOption_NewValueChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void DescribingOption_NewValueChanged(object sender, TextChangedEventArgs e)
         {
             dataContext_?.InvokePropertyChanged(nameof(dataContext_.CommandLine));
         }
 
-        private void BuildFolder_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void BuildFolder_TextChanged(object sender, TextChangedEventArgs e)
         {
             dataContext_?.InvokePropertyChanged(nameof(dataContext_.CommandLine));
         }
 
-        private void BuildConfigurationsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void BuildConfigurationsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             dataContext_?.InvokePropertyChanged(nameof(dataContext_.CommandLine));
         }
@@ -162,14 +162,22 @@ namespace V8Builder
             }
         }
 
-        private void FilterAvailable_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void FilterAvailable_TextChanged(object sender, TextChangedEventArgs e)
         {
             ApplyFilter(AvailableOptionsList, dataContext_?.AvailableFilter);
         }
 
-        private void FilterSelected_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void FilterSelected_TextChanged(object sender, TextChangedEventArgs e)
         {
             ApplyFilter(SelectedOptionsList, dataContext_?.SelectedFilter);
+        }
+
+        private void Tabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Tabs.SelectedIndex == 1 && BuildConfigurationsList.SelectedItem != null)
+            {
+                BuildConfigurationsList.ScrollIntoView(BuildConfigurationsList.SelectedItem);
+            }
         }
 
         private App app_ = Application.Current as App;
