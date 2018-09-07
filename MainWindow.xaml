@@ -150,7 +150,7 @@
 
                     <TextBlock Grid.Row="3" Grid.Column="3" Margin="4,4,4,4" Text="{Binding Path=DescribingOption.Name}" FontSize="14" VerticalAlignment="Bottom" />
                     <TextBox Grid.Row="4" Grid.Column="3" Margin="4,4,4,4" Text="{Binding Path=DescribingOption.DisplayValue, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding Path=DescribingOption.Selected, Converter={StaticResource boolInvertConverter}}" FontSize="14" TextWrapping="Wrap" TextChanged="DescribingOption_NewValueChanged" />
-                    <TextBlock Grid.Row="5" Grid.Column="3" Margin="4,4,4,4" Text="{Binding Path=DescribingOption.Description}" FontSize="14" TextWrapping="Wrap" />
+                    <TextBox Grid.Row="5" Grid.Column="3" Margin="4,4,4,4" Text="{Binding Path=DescribingOption.Description}" IsReadOnly="True" FontSize="14" TextWrapping="Wrap" />
                     <ListBox Grid.Row="6" Grid.Column="0" x:Name="BuildConfigurationsList" Margin="4,4,4,4" BorderThickness="1"
                              ItemsSource="{Binding Path=Config.BuildConfigurations}" SelectedItem="{Binding Config.BuildConfiguration}" SelectionChanged="BuildConfigurationsList_SelectionChanged">
                         <ListBox.ItemTemplate>
